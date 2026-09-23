@@ -67,7 +67,7 @@ RUN groupadd -r -g 101 odoo \
 
 # Odoo 20.0 from git, laid out like the official .deb (python package + all community addons in one dir)
 ENV ODOO_VERSION=20.0
-ARG ODOO_SHA=efc7cb0f13a1817a068330f14faa8dc811e31f2a
+ARG ODOO_SHA=044ab068a802e9cedaa0020ed547036607b99d69
 RUN curl -fsSL --retry 8 --retry-all-errors https://github.com/odoo/odoo/archive/${ODOO_SHA}.tar.gz -o /tmp/odoo.tar.gz \
     && mkdir /tmp/odoo-src && tar -xzf /tmp/odoo.tar.gz -C /tmp/odoo-src --strip-components=1 \
     && cp -r /tmp/odoo-src/odoo /usr/lib/python3/dist-packages/odoo \

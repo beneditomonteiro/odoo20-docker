@@ -11,7 +11,7 @@ Build recipe and deploy example for **[`messiazmonteiro/odoo20-core`](https://hu
 docker build -t odoo20-core:20.0 .
 # another commit:  docker build --build-arg ODOO_SHA=<sha> -t odoo20-core:custom .
 ```
-If GitHub is slow from inside your builder, download `https://github.com/odoo/odoo/archive/<sha>.tar.gz` on the host and swap the `curl` step for a `COPY` + `sha256sum -c` (this is how the published `20.0-20260913` image was built; same commit `efc7cb0`).
+If GitHub is slow from inside your builder, download `https://github.com/odoo/odoo/archive/<sha>.tar.gz` on the host and swap the `curl` step for a `COPY` + `sha256sum -c` (this is how the first published `20.0-20260913` image was built, from commit `efc7cb0`). Current pin: `044ab068` (odoo/odoo 20.0 @ 2026-09-22), published as `20.0-20260922`, `20.0` and `20`.
 
 ## Deploy
 ```bash
